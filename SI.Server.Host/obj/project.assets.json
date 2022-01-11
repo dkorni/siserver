@@ -1,0 +1,106 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "SI.Server.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SI.Server.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SI.Server.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SI.Server.Application.dll": {}
+        }
+      },
+      "SI.Server.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SI.Server.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SI.Server.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SI.Server.Application/1.0.0": {
+      "type": "project",
+      "path": "../SI.Server.Application/SI.Server.Application.csproj",
+      "msbuildProject": "../SI.Server.Application/SI.Server.Application.csproj"
+    },
+    "SI.Server.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SI.Server.Domain/SI.Server.Domain.csproj",
+      "msbuildProject": "../SI.Server.Domain/SI.Server.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "SI.Server.Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/deniskornienko/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/SI.Server.Host.csproj",
+      "projectName": "SI.Server.Host",
+      "projectPath": "/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/SI.Server.Host.csproj",
+      "packagesPath": "/Users/deniskornienko/.nuget/packages/",
+      "outputPath": "/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/deniskornienko/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Application/SI.Server.Application.csproj": {
+              "projectPath": "/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Application/SI.Server.Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/Users/deniskornienko/.dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

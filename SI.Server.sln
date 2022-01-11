@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.Host", "SI.Server.Host\SI.Server.Host.csproj", "{79F2AC1E-9CCA-46B7-9229-2ED8CF4A2E63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6A62DBE8-0616-4FAA-BC1C-D073CAA603C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.Domain", "SI.Server.Domain\SI.Server.Domain.csproj", "{91E528E6-902A-486B-BCDF-C6E8D20C4003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.Application", "SI.Server.Application\SI.Server.Application.csproj", "{245F4DC1-671B-4A36-A8F7-D9240B74389C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79F2AC1E-9CCA-46B7-9229-2ED8CF4A2E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F2AC1E-9CCA-46B7-9229-2ED8CF4A2E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F2AC1E-9CCA-46B7-9229-2ED8CF4A2E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F2AC1E-9CCA-46B7-9229-2ED8CF4A2E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E528E6-902A-486B-BCDF-C6E8D20C4003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E528E6-902A-486B-BCDF-C6E8D20C4003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E528E6-902A-486B-BCDF-C6E8D20C4003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E528E6-902A-486B-BCDF-C6E8D20C4003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91E528E6-902A-486B-BCDF-C6E8D20C4003} = {6A62DBE8-0616-4FAA-BC1C-D073CAA603C4}
+		{245F4DC1-671B-4A36-A8F7-D9240B74389C} = {6A62DBE8-0616-4FAA-BC1C-D073CAA603C4}
+	EndGlobalSection
+EndGlobal

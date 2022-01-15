@@ -8,3 +8,23 @@
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.dll
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Host/obj/Debug/net5.0/ref/SI.Server.Host.dll
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Host.deps.json
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Host.runtimeconfig.json
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Host.runtimeconfig.dev.json
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Host.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/ref/SI.Server.Host.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Host.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Application.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Domain.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Application.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/bin/Debug/net5.0/SI.Server.Domain.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.csproj.AssemblyReference.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.GeneratedMSBuildEditorConfig.editorconfig
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.AssemblyInfoInputs.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.AssemblyInfo.cs
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.csproj.CoreCompileInputs.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.csproj.CopyComplete
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/ref/SI.Server.Host.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Host/obj/Debug/net5.0/SI.Server.Host.genruntimeconfig.cache

@@ -5,9 +5,9 @@ namespace SI.Server.Domain.Packets
 {
     public class ConnectionRequestPacket : Packet
     {
-        public override PacketType Type => PacketType.ObjectChangedTransform;
+        public override PacketType Type => PacketType.ConnectionRequest;
 
-        public override byte DataSize => (byte)PacketDataSize.ObjectChangedTransform;
+        public override byte DataSize => (byte)PacketDataSize.ConnectionRequest;
     
         public string PlayerName { get; }
         

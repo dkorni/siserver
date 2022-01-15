@@ -14,7 +14,7 @@ namespace SI.Server.Domain.Packets
     
         public Quaternion Rotation { get; }
 
-        public ObjectChangedTransformPacket(int objectId, PacketType type, byte dataSize, Vector3 position, 
+        public ObjectChangedTransformPacket(int objectId, Vector3 position, 
             Quaternion rotation) :
             base(objectId)
         {

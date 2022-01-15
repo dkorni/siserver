@@ -8,3 +8,15 @@
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.dll
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Domain/obj/Debug/net5.0/ref/SI.Server.Domain.dll
 /Users/deniskornienko/Desktop/Методи прийняття рішень/Лаба 1/ConsoleApp1/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/bin/Debug/net5.0/SI.Server.Domain.deps.json
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/bin/Debug/net5.0/SI.Server.Domain.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/bin/Debug/net5.0/ref/SI.Server.Domain.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/bin/Debug/net5.0/SI.Server.Domain.pdb
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.csproj.AssemblyReference.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.AssemblyInfoInputs.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.AssemblyInfo.cs
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.csproj.CoreCompileInputs.cache
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/ref/SI.Server.Domain.dll
+/Users/deniskornienko/Documents/Projects/SI.Server/SI.Server.Domain/obj/Debug/net5.0/SI.Server.Domain.pdb

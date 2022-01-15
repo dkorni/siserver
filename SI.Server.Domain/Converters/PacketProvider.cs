@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Network.Packets;
+using SI.Server.Domain.Entities;
 using SI.Server.Domain.Enums;
 using SI.Server.Domain.Packets;
 
@@ -10,6 +11,17 @@ namespace SI.Server.Domain.Converters
     public class PacketProvider
     {
         public static byte[] GetConnectionRequestBytePacket(ConnectionRequestPacket packetModel)
+        {
+            var packet = GetBasicPacket(packetModel);
+            
+            for (int i = 0; i < packetModel.PlayerName.Length; i++)
+            {
+                packet[i + 4] = (byte)packetModel.PlayerName[i];
+            }
+            return packet;
+        }
+        
+        public static byte[] GetPlayerJoinedPacketBytePacket(PlayerJoinedPacket packetModel)
         {
             var packet = GetBasicPacket(packetModel);
             
@@ -30,6 +42,7 @@ namespace SI.Server.Domain.Converters
             
             // TODO: rotation
             
+            packet[4] = bitX[0];
             packet[5] = bitX[1];
             packet[6] = bitX[2];
             packet[7] = bitX[3];
@@ -54,14 +67,21 @@ namespace SI.Server.Domain.Converters
             switch (type)
             {
                 case PacketType.ConnectionRequest:
-                    playerId  = BitConverter.ToInt32(binPacket, 0);
-                    playerName = Encoding.UTF8.GetString(binPacket.Skip(4).ToArray());
+                    playerId  = BitConverter.ToInt16(binPacket, 0);
+                    playerName = Encoding.UTF8.GetString(binPacket.Skip(4).ToArray()).Trim('\0');
                     packet = new ConnectionRequestPacket(playerId, playerName);
                     break;
                 case PacketType.PlayerJoined:
-                    playerId = BitConverter.ToInt32(binPacket, 0);
-                    playerName = Encoding.UTF8.GetString(binPacket.Skip(4).ToArray());
+                    playerId = BitConverter.ToInt16(binPacket, 0);
+                    playerName = Encoding.UTF8.GetString(binPacket.Skip(4).ToArray()).Trim('\0');;
                     packet = new PlayerJoinedPacket(playerId, playerName);
+                    break;
+                case PacketType.ObjectChangedTransform:
+                    playerId = BitConverter.ToInt16(binPacket, 0);
+                    var posX = BitConverter.ToSingle(binPacket, 4);
+                    var posY = BitConverter.ToSingle(binPacket, 8);
+                    var posZ = BitConverter.ToSingle(binPacket, 12);
+                    packet = new ObjectChangedTransformPacket(playerId, new Vector3(posX, posY, posZ), Quaternion.Zero);
                     break;
             }
 
@@ -79,7 +99,7 @@ namespace SI.Server.Domain.Converters
                 packet[1] = bitId[1];
             }
           
-            packet[2] = (byte)PacketType.ConnectionRequest;
+            packet[2] = (byte)packetModel.Type;
             packet[3] = packetModel.DataSize;
             return packet;
         }

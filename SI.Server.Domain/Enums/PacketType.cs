@@ -7,6 +7,7 @@ namespace SI.Server.Domain.Enums
         ConnectionRequest = 1,
         SpawnPlayer = 2,
         ObjectChangedTransform = 3,
-        PlayerJoined = 4
+        PlayerJoined = 4,
+        WorldDataRequest = 5
     }
 }

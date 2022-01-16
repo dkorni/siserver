@@ -6,7 +6,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using Network.Packets;
-using SI.Server.Application.Extensions;
 using SI.Server.Domain.Converters;
 using SI.Server.Domain.Entities;
 using SI.Server.Domain.Enums;
@@ -69,6 +68,13 @@ namespace SI.Server.Application
                     var transformMessage = PacketProvider.GetObjectChangedPositionBytePacket(transformPacket);
                     client.SendAsync(transformMessage, transformMessage.Length, e);
                 }
+            }
+
+            if (message[2] == (byte) PacketType.Disconnect)
+            {
+                var packet = PacketProvider.GetPacket<DisconnectPacket>(message);
+                _players.Remove(packet.ObjectId.Value, out _);
+                Broadcast(client, message);
             }
         }
         

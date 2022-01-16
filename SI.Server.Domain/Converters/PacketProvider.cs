@@ -83,6 +83,10 @@ namespace SI.Server.Domain.Converters
                     var posZ = BitConverter.ToSingle(binPacket, 12);
                     packet = new ObjectChangedTransformPacket(playerId, new Vector3(posX, posY, posZ), Quaternion.Zero);
                     break;
+                case PacketType.Disconnect:
+                    playerId = BitConverter.ToInt16(binPacket, 0);
+                    packet = new DisconnectPacket(playerId);
+                    break;
             }
 
             return (T)packet;

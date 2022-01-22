@@ -3,6 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using ConsoleApp1.IoC;
+using Microsoft.Extensions.DependencyInjection;
 using SI.Server.Application;
 
 namespace ConsoleApp1
@@ -11,10 +13,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Listening for messages");
-            var asyncSocketListener = new AsynchronousSocketListener();
-            var server = new Server(asyncSocketListener);
-            asyncSocketListener.StartReceiveMessages();
+            IServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.RegitserMainModule();
+            var provider = serviceCollection.BuildServiceProvider();
+            var server = provider.GetRequiredService<Server>();
         }
     }
 }

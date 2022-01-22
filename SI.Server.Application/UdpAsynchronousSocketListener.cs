@@ -3,13 +3,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using SI.Server.Domain.Interfaces;
 
 namespace SI.Server.Application
 {
-    public class AsynchronousSocketListener
+    public class UdpAsynchronousSocketListener : IAsynchronousSocketListener
     {
-        public static ManualResetEvent allDone = new ManualResetEvent(false);
-
         public Action<byte[], UdpClient, IPEndPoint> MessageHandler { get; set; }
 
         private struct UdpState

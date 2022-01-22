@@ -1,9 +1,11 @@
-﻿using SI.Server.Domain.Constants;
+﻿using System;
+using SI.Server.Domain.Constants;
 using SI.Server.Domain.Entities;
 using SI.Server.Domain.Enums;
 
 namespace SI.Server.Domain.Packets
 {
+    [Serializable]
     public class ObjectChangedTransformPacket : Packet
     {
         public override PacketType Type => PacketType.ObjectChangedTransform;

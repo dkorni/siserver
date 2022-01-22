@@ -1,5 +1,8 @@
+using System;
+
 namespace SI.Server.Domain.Entities
 {
+    [Serializable]
     public class Quaternion
     {
         public float X { get; set; }

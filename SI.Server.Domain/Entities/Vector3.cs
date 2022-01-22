@@ -1,5 +1,8 @@
+using System;
+
 namespace SI.Server.Domain.Entities
 {
+    [Serializable]
     public class Vector3
     {
         public float X { get; set; }

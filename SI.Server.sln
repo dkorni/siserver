@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.Domain", "SI.Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.Application", "SI.Server.Application\SI.Server.Application.csproj", "{245F4DC1-671B-4A36-A8F7-D9240B74389C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{83C18B00-AFAC-491E-8479-1429CE3C7B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Server.LoadTests", "SI.Server.LoadTests\SI.Server.LoadTests.csproj", "{71635365-E337-441F-B38A-0D99B30BB2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{245F4DC1-671B-4A36-A8F7-D9240B74389C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71635365-E337-441F-B38A-0D99B30BB2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71635365-E337-441F-B38A-0D99B30BB2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71635365-E337-441F-B38A-0D99B30BB2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71635365-E337-441F-B38A-0D99B30BB2F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91E528E6-902A-486B-BCDF-C6E8D20C4003} = {6A62DBE8-0616-4FAA-BC1C-D073CAA603C4}
 		{245F4DC1-671B-4A36-A8F7-D9240B74389C} = {6A62DBE8-0616-4FAA-BC1C-D073CAA603C4}
+		{71635365-E337-441F-B38A-0D99B30BB2F8} = {83C18B00-AFAC-491E-8479-1429CE3C7B18}
 	EndGlobalSection
 EndGlobal

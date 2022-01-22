@@ -3,6 +3,7 @@ using SI.Server.Domain.Enums;
 
 namespace SI.Server.Domain.Packets
 {
+    [Serializable]
     public class Packet
     {
         public int? ObjectId { get; set; }

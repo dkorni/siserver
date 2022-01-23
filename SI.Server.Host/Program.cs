@@ -17,6 +17,9 @@ namespace ConsoleApp1
             serviceCollection.RegitserMainModule();
             var provider = serviceCollection.BuildServiceProvider();
             var server = provider.GetRequiredService<Server>();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("SI Server started and listen incoming packets.");
+            Console.ReadLine();
         }
     }
 }

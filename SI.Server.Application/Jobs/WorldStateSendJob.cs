@@ -9,14 +9,14 @@ namespace SI.Server.Application.Jobs
 {
     public class WorldStateSendJob : IJob
     {
-        private readonly ISocketSender _sender;
+        private readonly ISocketService _sender;
         private readonly GameState _gameState;
 
         private const int PlayerCount = 100;
         private const int SendDelay = 50;
         private CancellationTokenSource _cancellationToken;
         
-        public WorldStateSendJob(ISocketSender sender, 
+        public WorldStateSendJob(ISocketService sender, 
             GameState gameState)
         {
             _sender = sender;

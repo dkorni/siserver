@@ -5,6 +5,8 @@ using System.Reflection;
 using Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using SI.Server.Application;
+using SI.Server.Application.Handlers;
+using SI.Server.Application.Providers;
 using SI.Server.Domain;
 using SI.Server.Domain.Converters;
 using SI.Server.Domain.Enums;
@@ -24,24 +26,32 @@ namespace ConsoleApp1.IoC
                 [PacketType.ObjectChangedTransform] = new ObjectChangedTransformPacketConverter(),
                 [PacketType.ConnectionRequest] = new ConnectionRequestPacketConverter(),
                 [PacketType.PlayerJoined] = new PlayerJoinedPacketConverter(),
+                [PacketType.WorldDataRequest] = new WorldDataRequestConverter(),
                 [PacketType.Disconnect] = new DisconnectPacketConverter()
             };
 
             container.AddSingleton<IDictionary<PacketType, BasicPacketConverter>>(converters);
             container.AddSingleton<INetworkSerializer, BinaryNetworkSerializer>();
-            
-            var handlerTypes = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.GetInterfaces().Any(i => i.Name.Equals("IPacketHandler")));
-            var handlerInstances =
-                handlerTypes.Select(x => (IPacketHandler) Activator.CreateInstance(x));
-            var handlers = handlerInstances.ToDictionary(x => x.PacketType, x => x);
+            container.AddSingleton<PlayerProvider>();
 
-            container.AddSingleton<IDictionary<PacketType, IPacketHandler>>(handlers);
+            container.AddSingleton<IDictionary<PacketType, IPacketHandler>>(sp =>
+                new Dictionary<PacketType, IPacketHandler>()
+                {
+                    [PacketType.ObjectChangedTransform] = sp.GetRequiredService<ObjectChangedTransformPacketHandler>(),
+                    [PacketType.ConnectionRequest] = sp.GetRequiredService<ConnectionRequestHandler>(),
+                    [PacketType.WorldDataRequest] = sp.GetRequiredService<WorldDataRequestHandler>(),
+                    [PacketType.Disconnect] = sp.GetRequiredService<DisconnectHandler>()
+                });
 
-            container.AddSingleton<ISocketSender, SocketSender>();
-            container.AddSingleton<IAsynchronousSocketListener, UdpAsynchronousSocketListener>();
+            container.AddSingleton<ObjectChangedTransformPacketHandler>();
+            container.AddSingleton<ConnectionRequestHandler>();
+            container.AddSingleton<WorldDataRequestHandler>();
+            container.AddSingleton<DisconnectHandler>();
+
+            container.AddSingleton<ISocketService, UdpSocketService>();
             container.AddSingleton<Server>();
-            
+            container.AddSingleton<IServiceProvider>(sp => sp);
+
             return container;
         }
     }

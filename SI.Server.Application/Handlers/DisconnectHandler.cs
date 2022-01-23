@@ -9,11 +9,11 @@ namespace SI.Server.Application.Handlers
 {
     public class DisconnectHandler : IPacketHandler
     {
-        private readonly ISocketSender _socketSender;
+        private readonly ISocketService _socketSender;
         private readonly PlayerProvider _playerProvider;
         public PacketType PacketType => PacketType.Disconnect;
 
-        public DisconnectHandler(ISocketSender socketSender, PlayerProvider playerProvider)
+        public DisconnectHandler(ISocketService socketSender, PlayerProvider playerProvider)
         {
             _socketSender = socketSender;
             _playerProvider = playerProvider;

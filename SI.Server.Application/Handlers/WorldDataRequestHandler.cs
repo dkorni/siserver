@@ -10,11 +10,11 @@ namespace SI.Server.Application.Handlers
 {
     public class WorldDataRequestHandler : IPacketHandler
     {
-        private readonly ISocketSender _socketSender;
+        private readonly ISocketService _socketSender;
         private readonly PlayerProvider _playerProvider;
         public PacketType PacketType => PacketType.WorldDataRequest;
 
-        public WorldDataRequestHandler(ISocketSender socketSender, PlayerProvider playerProvider)
+        public WorldDataRequestHandler(ISocketService socketSender, PlayerProvider playerProvider)
         {
             _socketSender = socketSender;
             _playerProvider = playerProvider;

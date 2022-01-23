@@ -15,16 +15,17 @@ namespace SI.Server.Application
         private readonly IDictionary<PacketType, IPacketHandler> _handlres;
 
         public Server(GameState gameState, 
-            IAsynchronousSocketListener listener,
+            ISocketService socketService,
             INetworkSerializer networkSerializer,
-            ISocketSender socketSender,
             IDictionary<PacketType, IPacketHandler> handlres)
         {
-            listener.MessageHandler = ProcessMessage;
+            
+            socketService.MessageHandler = ProcessMessage;
             _networkSerializer = networkSerializer;
             _handlres = handlres;
-
-            var job = new WorldStateSendJob(socketSender, gameState);
+            socketService.StartReceiveMessages();
+            
+            var job = new WorldStateSendJob(socketService, gameState);
             job.Run();
         }
 

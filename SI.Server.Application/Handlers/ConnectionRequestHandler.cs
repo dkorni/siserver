@@ -13,13 +13,13 @@ namespace SI.Server.Application.Handlers
 {
     public class ConnectionRequestHandler : IPacketHandler
     {
-        private readonly ISocketSender _socketSender;
+        private readonly ISocketService _socketSender;
         private readonly PlayerProvider _playerProvider;
         private readonly BinaryNetworkSerializer _serializer;
         private readonly GameState _gameState;
         public PacketType PacketType => PacketType.ConnectionRequest;
 
-        public ConnectionRequestHandler(ISocketSender socketSender, PlayerProvider playerProvider)
+        public ConnectionRequestHandler(ISocketService socketSender, PlayerProvider playerProvider)
         {
             _socketSender = socketSender;
             _playerProvider = playerProvider;

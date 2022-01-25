@@ -25,8 +25,9 @@ namespace SI.Server.Application.Jobs
 
         public void Run()
         {
+            // todo
             _cancellationToken = new CancellationTokenSource();
-            Task.Run(async () => await ProcessState(), _cancellationToken.Token);
+            Task.Run(async () => await ProcessState());
         }
 
         public void Stop()

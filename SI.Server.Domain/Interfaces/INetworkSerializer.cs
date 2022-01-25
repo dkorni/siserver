@@ -4,10 +4,10 @@ namespace SI.Server.Domain.Interfaces
 {
     public interface INetworkSerializer
     {
-        public byte[] Serialize(Packet obj);
+        byte[] Serialize(Packet obj);
 
-        public byte[] Serialize(Packet[] batch);
+        byte[] Serialize(Packet[] batch);
         
-        public Packet Deserialize(byte[] binaryObj);
+        Packet Deserialize(byte[] binaryObj);
     }
 }

@@ -8,19 +8,19 @@ namespace SI.Server.Domain.Interfaces
 {
     public interface ISocketService
     {
-        public Action<byte[], UdpClient, IPEndPoint> MessageHandler { get; set; }
-        public void StartReceiveMessages();
+        Action<byte[], UdpClient, IPEndPoint> MessageHandler { get; set; }
+        void StartReceiveMessages();
         
-        public void AddConnection(IPEndPoint connection);
+        void AddConnection(IPEndPoint connection);
         
-        public Task SendAsync(Packet packet, IPEndPoint e);
+        Task SendAsync(Packet packet, IPEndPoint e);
         
-        public Task SendAsync(Packet[] batch, IPEndPoint e);
+        Task SendAsync(Packet[] batch, IPEndPoint e);
 
-        public void RemoveConnection(IPEndPoint connection);
+        void RemoveConnection(IPEndPoint connection);
 
-        public Task Broadcast(Packet packet);
+        Task Broadcast(Packet packet);
 
-        public Task Broadcast(Packet[] batch);
+        Task Broadcast(Packet[] batch);
     }
 }

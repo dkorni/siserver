@@ -23,10 +23,9 @@ namespace SI.Server.Application
             socketService.MessageHandler = ProcessMessage;
             _networkSerializer = networkSerializer;
             _handlres = handlres;
-            socketService.StartReceiveMessages();
-            
             var job = new WorldStateSendJob(socketService, gameState);
             job.Run();
+            socketService.StartReceiveMessages();
         }
 
         private void ProcessMessage(byte[] message, UdpClient client, IPEndPoint e)

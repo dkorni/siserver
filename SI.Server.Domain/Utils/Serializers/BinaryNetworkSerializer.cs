@@ -28,7 +28,7 @@ namespace SI.Server.Domain.Utils.Serializers
 
         public byte[] Serialize(Packet[] batch)
         {
-            var bufferLength = batch.Length + 2;
+            var bufferLength = batch.Length + 2 + 4*batch.Length;
             
             foreach (var packet in batch)
             {
@@ -43,8 +43,16 @@ namespace SI.Server.Domain.Utils.Serializers
             for (var i = 0; i < batch.Length; i++)
             {
                 var bytes = Serialize(batch[i]);
-                bytes.CopyTo(buffer, copyIndex);
-                copyIndex += batch[i].DataSize;
+                try
+                {
+                    bytes.CopyTo(buffer, copyIndex);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                
+                copyIndex += batch[i].DataSize+4;
                 buffer[copyIndex] = (byte) ':';
                 copyIndex++;
             }

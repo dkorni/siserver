@@ -21,7 +21,7 @@ namespace SI.Server.Domain.Converters
             return buffer;
         }
 
-        public override PlayerJoinedPacket ConvertToPacket(byte[] binPacket)
+        public override Packet ConvertToPacket(byte[] binPacket)
         {
             var playerId = BitConverter.ToInt16(binPacket, 0);
             var playerName = Encoding.UTF8.GetString(binPacket.Skip(4).ToArray()).Trim('\0');;

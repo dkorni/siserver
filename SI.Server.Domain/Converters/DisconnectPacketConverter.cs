@@ -8,11 +8,11 @@ namespace SI.Server.Domain.Converters
     {
         public override byte[] ConvertToBytes(Packet packet)
         {
-            // TODO: fill method
-            return new byte[1];
+            var buffer = GetBasicPacket(packet);
+            return buffer;
         }
 
-        public override DisconnectPacket ConvertToPacket(byte[] binPacket)
+        public override Packet ConvertToPacket(byte[] binPacket)
         {
             var playerId = BitConverter.ToInt16(binPacket, 0);
             var packet = new DisconnectPacket(playerId);

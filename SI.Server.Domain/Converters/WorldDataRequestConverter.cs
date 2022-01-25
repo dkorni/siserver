@@ -8,7 +8,8 @@ namespace SI.Server.Domain.Converters
     {
         public override byte[] ConvertToBytes(Packet packet)
         {
-            return Array.Empty<byte>();
+            var buffer = GetBasicPacket(packet);
+            return buffer;
         }
 
         public override Packet ConvertToPacket(byte[] packet)

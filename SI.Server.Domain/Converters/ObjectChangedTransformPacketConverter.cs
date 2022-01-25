@@ -63,7 +63,7 @@ namespace SI.Server.Domain.Converters
             return buffer;
         }
 
-        public override ObjectChangedTransformPacket ConvertToPacket(byte[] binPacket)
+        public override Packet ConvertToPacket(byte[] binPacket)
         {
             var playerId = BitConverter.ToInt16(binPacket, 0);
             var posX = BitConverter.ToSingle(binPacket, 4);

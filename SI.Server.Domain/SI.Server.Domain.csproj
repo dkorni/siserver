@@ -1,7 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain </OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain </OutputPath>
     </PropertyGroup>
 
 </Project>

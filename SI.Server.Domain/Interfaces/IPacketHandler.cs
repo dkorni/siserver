@@ -7,8 +7,8 @@ namespace Contracts
 {
     public interface IPacketHandler
     {
-        public PacketType PacketType { get; }
+        PacketType PacketType { get; }
         
-        public void Handle(Packet packet, IPEndPoint e);
+        void Handle(Packet packet, IPEndPoint e);
     }
 }

@@ -39,9 +39,13 @@ namespace SI.Server.Application.Jobs
         {
             while (true)
             {
-                var batch = _gameState.Players.Values.Select(x =>
-                    new ObjectChangedTransformPacket(x.Id, x.Position, x.Rotation)).ToArray();
-                await _sender.Broadcast(batch);
+                if (_gameState.Players.Values.Count > 0)
+                {
+                    var batch = _gameState.Players.Values.Select(x =>
+                        new ObjectChangedTransformPacket(x.Id, x.Position, x.Rotation)).ToArray();
+                    await _sender.Broadcast(batch);
+                }
+                
                 await Task.Delay(SendDelay);
             }
         }

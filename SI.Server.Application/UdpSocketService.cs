@@ -57,11 +57,9 @@ namespace SI.Server.Application
 
             byte[] receiveBytes = u.EndReceive(ar, ref e);
             
-            string receiveString = Encoding.ASCII.GetString(receiveBytes);
             u.BeginReceive(ReceiveCallback, ar.AsyncState);
 
             MessageHandler?.Invoke(receiveBytes, u, e);
-            Console.WriteLine($"Received: {receiveString}");
             messageReceived = true;
         }
         

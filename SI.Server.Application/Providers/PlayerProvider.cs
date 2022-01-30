@@ -33,6 +33,7 @@ namespace SI.Server.Application.Providers
         public void Remove(int playerId)
         {
             _gameState.Players.TryRemove(playerId, out _);
+            _availablePlayerIds.Enqueue(playerId);
         }
     }
 }

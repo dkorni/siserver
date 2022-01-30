@@ -43,11 +43,8 @@ namespace SI.Server.Application
             UdpState s = new UdpState();
             s.e = e;
             s.UdpClient = _udpClient;
-            
-            _udpClient.BeginReceive(ReceiveCallback, s);
 
-            // Do some work while we wait for a message. For this example, we'll just sleep
-            Console.ReadLine();
+            _udpClient.BeginReceive(ReceiveCallback, s);
         }
         
         private void ReceiveCallback(IAsyncResult ar)

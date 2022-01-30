@@ -5,11 +5,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain </OutputPath>
+      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain/netstandard2.0/</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain </OutputPath>
+      <OutputPath>/Users/deniskornienko/SwordInsurationBasic/Assets/Plugins/SI.Serve.Domain/netstandard2.0/</OutputPath>
     </PropertyGroup>
 
 </Project>

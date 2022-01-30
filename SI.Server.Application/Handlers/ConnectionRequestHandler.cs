@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using Contracts;
 using Network.Packets;
+using Serilog;
 using SI.Server.Application.Providers;
 using SI.Server.Domain;
 using SI.Server.Domain.Enums;
@@ -28,9 +29,9 @@ namespace SI.Server.Application.Handlers
         public void Handle(Packet packet, IPEndPoint e)
         {
             var connectionPacket = packet as ConnectionRequestPacket;
-            Console.WriteLine("Player {0} joined with address {1}", connectionPacket!.PlayerName, 
+            Log.Logger.Information("Player {0} joined with address {1}", connectionPacket!.PlayerName, 
                 $"{e.Address}:{e.Port}");
-
+            
             var player = _playerProvider.AddPlayer(connectionPacket.PlayerName, e);
             connectionPacket.ObjectId = player.Id;
             _socketSender.AddConnection(player.Address);

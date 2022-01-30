@@ -1,5 +1,6 @@
 using System.Net;
 using Contracts;
+using Serilog;
 using SI.Server.Application.Providers;
 using SI.Server.Domain.Enums;
 using SI.Server.Domain.Interfaces;
@@ -23,6 +24,7 @@ namespace SI.Server.Application.Handlers
         {
             var disconnectPacket = packet as DisconnectPacket;
             _playerProvider.Remove(packet.ObjectId.Value);
+            Log.Logger.Information("Player with id {0} disconnected", disconnectPacket!.ObjectId);
             _socketSender.RemoveConnection(e);
             _socketSender.Broadcast(disconnectPacket);
         }

@@ -30,7 +30,7 @@ namespace SI.Server.Application.Handlers
                 if(player.Address.Equals(e))
                     continue;
                     
-                var playerJoinedPacket = new PlayerJoinedPacket(player.Id, player.Name);
+                var playerJoinedPacket = new PlayerJoinedPacket(player.Id, player.Name, player.Color);
                 _socketSender.SendAsync(playerJoinedPacket, e);
                 var transformPacket = new ObjectChangedTransformPacket(player.Id, player.Position, player.Rotation);
                 _socketSender.SendAsync(transformPacket, e);

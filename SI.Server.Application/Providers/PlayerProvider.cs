@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using SI.Server.Domain;
 using SI.Server.Domain.Entities;
+using SI.Server.Domain.Enums;
 
 namespace SI.Server.Application.Providers
 {
@@ -17,10 +18,10 @@ namespace SI.Server.Application.Providers
             _availablePlayerIds = new Queue<int>(Enumerable.Range(1, 100).ToArray());
         }
         
-        public Player AddPlayer(string playerName, IPEndPoint e)
+        public Player AddPlayer(string playerName, Colors color, IPEndPoint e)
         {
             var playerId = _availablePlayerIds.Dequeue();
-            var player = new Player(playerId, playerName, e, Vector3.Zero, Quaternion.Zero);
+            var player = new Player(playerId, playerName, e, Vector3.Zero, Quaternion.Zero, color);
             _gameState.Players[playerId] = player;
             return player;
         }

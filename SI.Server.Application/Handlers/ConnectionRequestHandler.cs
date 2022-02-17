@@ -32,12 +32,12 @@ namespace SI.Server.Application.Handlers
             Log.Logger.Information("Player {0} joined with address {1}", connectionPacket!.PlayerName, 
                 $"{e.Address}:{e.Port}");
             
-            var player = _playerProvider.AddPlayer(connectionPacket.PlayerName, e);
+            var player = _playerProvider.AddPlayer(connectionPacket.PlayerName, connectionPacket.Color, e);
             connectionPacket.ObjectId = player.Id;
             _socketSender.AddConnection(player.Address);
             _socketSender.SendAsync(connectionPacket, player.Address);
 
-            var playerJoinedPacket = new PlayerJoinedPacket(player.Id, player.Name);
+            var playerJoinedPacket = new PlayerJoinedPacket(player.Id, player.Name, player.Color);
 
             _socketSender.Broadcast(playerJoinedPacket);
         }

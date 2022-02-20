@@ -18,6 +18,7 @@ namespace SI.Server.Domain.Packets
             : base(objectId)
         {
             PlayerName = playerName;
+            Color = color;
         }
     }
 }

@@ -29,8 +29,8 @@ namespace SI.Server.Application.Handlers
         public void Handle(Packet packet, IPEndPoint e)
         {
             var connectionPacket = packet as ConnectionRequestPacket;
-            Log.Logger.Information("Player {0} joined with address {1}", connectionPacket!.PlayerName, 
-                $"{e.Address}:{e.Port}");
+            Log.Logger.Information("Player {0} joined with address {1} color:{2}", connectionPacket!.PlayerName, 
+                $"{e.Address}:{e.Port}", connectionPacket.Color);
             
             var player = _playerProvider.AddPlayer(connectionPacket.PlayerName, connectionPacket.Color, e);
             connectionPacket.ObjectId = player.Id;

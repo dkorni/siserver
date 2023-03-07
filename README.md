@@ -37,4 +37,16 @@ namespace SI.Server.Domain.Packets
     }
 }
 ```
-This packet has **28** byte array size and next structure:
+This packet has **32** byte array size and next binary structure:
+<br/>![alt text](https://i.imgur.com/KnkTFWB.png)
+0-1 bytes - ObjectId, INT (player or other object on the scene)
+2 - PacketType, BYTE
+3 - PacketSize, BYTE
+4-7 bytes - X value of object position, FLOAT
+8-11 bytes - Y value of object position, FLOAT
+12-15 bytes - Z value of object position, FLOAT
+16-19 bytes - X value of object rotation, FLOAT
+20-23 bytes - Y value of object rotation, FLOAT
+24-27 bytes - z value of object rotation, FLOAT
+28-31 bytes - W value of object rotation, FLOAT
+

@@ -49,4 +49,48 @@ This packet has **32** byte array size and next binary structure:
 20-23 bytes - Y value of object rotation, FLOAT<br/>
 24-27 bytes - z value of object rotation, FLOAT<br/>
 28-31 bytes - W value of object rotation, FLOAT<br/>
+After server receive packet, it's deserialized and processed by packet type-based handler. Based on type of packet, server can answer with reaction to the sender client, like P2P message e.g ACC message. Or it can retransmit packet to other connected to server clients e.g object position and rotation message.
 
+
+Code example of handler:
+```
+using System.Net;
+using Contracts;
+using Serilog;
+using Serilog.Core;
+using SI.Server.Domain;
+using SI.Server.Domain.Enums;
+using SI.Server.Domain.Packets;
+
+namespace SI.Server.Application.Handlers
+{
+    public class ObjectChangedTransformPacketHandler : IPacketHandler
+    {
+        private readonly GameState _gameState;
+        public PacketType PacketType => PacketType.ObjectChangedTransform;
+
+        public ObjectChangedTransformPacketHandler(GameState gameState)
+        {
+            _gameState = gameState;
+        }
+        
+        public void Handle(Packet packet, IPEndPoint e)
+        {
+            var objectId = packet.ObjectId;
+            var objectTransformChangedPacket = (ObjectChangedTransformPacket) packet;
+
+            if (_gameState.Players.TryGetValue(objectId.Value, out var player))
+            {
+                _gameState.Players[objectId.Value].Position = objectTransformChangedPacket.Position;
+                _gameState.Players[objectId.Value].Rotation = objectTransformChangedPacket.Rotation;    
+            }
+            else
+            {
+                Log.Logger.Warning($"There is no player with id {objectId.Value} in current session.");
+            }
+        }
+    }
+}
+```
+
+**NOTE!** Server doesn't keep world state. Currently it can only process client messages and answer them or retransmit it. Server implements client authority architecture. This means, that it's risky to use it for MMO games, because of cheeting vulnerability. But, you can use it for small games.
